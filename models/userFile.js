@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/db'); // ✅ Required!
+const sequelize = require('../config/db');
 
 const UserFile = sequelize.define('UserFile', {
   fileName: {
@@ -10,9 +10,8 @@ const UserFile = sequelize.define('UserFile', {
   },
   uploadedAt: {
     type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW
+    allowNull: false // require manual date input
   },
-
   userId: {
     type: DataTypes.INTEGER
   }
